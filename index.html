@@ -5,8 +5,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chen Qian - Personal Website</title>
+  <title>Chen Qian - Machine Learning Engineer</title>
 
+  <!-- Add meta description -->
+  <meta name="description"
+    content="Chen Qian - Machine Learning Engineer and Open Source Contributor. Co-founder of KerasNLP, core contributor to Keras 3, MLflow, and DSPy. Specialized in deep learning, LLMs, and MLOps.">
+
+  <!-- Add meta keywords -->
+  <meta name="keywords"
+    content="Chen Qian, Machine Learning Engineer, KerasNLP, Keras 3, MLflow, DSPy, Deep Learning, LLM, MLOps, Open Source">
+
+  <!-- Add social media meta tags -->
+  <meta property="og:title" content="Chen Qian - Machine Learning Engineer">
+  <meta property="og:description"
+    content="Machine Learning Engineer and Open Source Contributor. Co-founder of KerasNLP, core contributor to Keras 3, MLflow, and DSPy.">
+  <meta property="og:image" content="./assets/images/avatar.jpeg">
+  <meta property="og:url" content="https://chenmoney.com">
+
+  <!-- Add canonical URL -->
+  <link rel="canonical" href="https://chenmoney.com">
 
   <!--
     - custom css link
@@ -27,7 +44,7 @@
     - #MAIN
   -->
 
-  <main>
+  <main role="main">
 
     <!--
       - #SIDEBAR
@@ -173,30 +190,45 @@
 
         <section class="about-text">
           <p>
-            I am a machine learning engineer with lots of interest in open source. I co-founded project 
-            <a href="https://github.com/keras-team/keras-nlp" style="display: inline-block;" >KerasNLP</a> with my
-            colleague at Google, and I am the second author (first author is <a href="https://twitter.com/fchollet" style="display: inline-block;" >Francois Chollet</a>)
-            of <a href="https://github.com/keras-team/keras" style="display: inline-block;" >Keras 3</a>, also known as multi-backend Keras.
+            I am a machine learning engineer with lots of interest in open source. I co-founded project
+            <a href="https://github.com/keras-team/keras-nlp" style="display: inline-block;">KerasNLP</a> with my
+            colleague at Google, and I am the second author (first author is <a href="https://twitter.com/fchollet"
+              style="display: inline-block;">Francois Chollet</a>)
+            of <a href="https://github.com/keras-team/keras" style="display: inline-block;">Keras 3</a>, also known as
+            multi-backend Keras.
           </p>
-            
           <p>
-            Currently I am working for Databricks, and working on the development and maintainance of
-            <a href="https://github.com/mlflow/mlflow" style="display: inline-block;" >MLflow</a>, a popular
-            open-source machine learning platform. I am leading the effort to improve MLflow experiment tracking to
-            be more seamless for deep learning use cases, while MLflow was designed for traditional ML workflows like
-            scikit-learn and XGBoost.
+            Currently I am working for Databricks, and working on the development and maintainance of two open-source
+            projects:
           </p>
-            
+          <ul style="list-style-type: disc; padding-left: 20px;">
+            <li>
+              - <a href="https://github.com/stanfordnlp/dspy" style="display: inline-block;">DSPy</a>, a framework for
+              algorithmically optimizing LM prompts and weights. DSPy is still an experimental project, and we are
+              working
+              on lots of exciting new features, stay tuned!
+            </li>
+            <li>
+              - <a href="https://github.com/mlflow/mlflow" style="display: inline-block;">MLflow</a>, a popular
+              open-source machine learning platform. Specially in charge of the MLflow support for deep learning.
+            </li>
+          </ul>
+
           <p>
-            I am specialized in deep learning, experienced in ML data processing, model authoring, training, optimization and
-            deployment. I am also a just-fine backend & infrastructure engineer, and have experience in building scalable and
-            reliable web services. Lastly, I am terrible at frontend, trust me bro, I have tried, but it's just not my thing.
+            I am specialized in deep learning, experienced in ML data processing, model authoring, training,
+            optimization and
+            deployment. I am also a just-fine backend & infrastructure engineer, and have experience in building
+            scalable and
+            reliable web services. Lastly, I am terrible at frontend, trust me bro, I have tried, but it's just not my
+            thing.
           </p>
 
           <p>
-            I am a huge believer in LLM and GenAI, and I am open to collaboration in these areas. Feel free to reach out to me
-            if you are interested in working together, or would like to have a chat. I also give tech talks and workshops on
-            deep learning, with a focus on training/finetuning and MLops with MLflow, and I am open to invitations.
+            I am open to collaborations in the areas of LLM and GenAI. Feel free to reach out
+            to me
+            if you are interested in working together, or would like to have a chat. I also give tech talks and
+            workshops on
+            deep learning, with a focus on training/finetuning and MLops with MLflow, and open to invitations.
           </p>
         </section>
 
@@ -214,7 +246,30 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <a href="https://github.com/mlflow/mlflow" style="display: block; text-decoration: none; color: inherit;">
+                <a href="https://github.com/stanfordnlp/dspy"
+                  style="display: block; text-decoration: none; color: inherit;">
+                  <img src="./assets/images/dspy_logo.png
+                  " alt="dspy logo" width="80">
+                </a>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">DSPy</h4>
+
+                <p class="service-item-text">
+                  DSPy is a framework for algorithmically building compound AI system, and automatically optimizing LM
+                  prompts
+                  and weights, especially when LMs are used one or more times within a pipeline.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <a href="https://github.com/mlflow/mlflow"
+                  style="display: block; text-decoration: none; color: inherit;">
                   <img src="./assets/images/mlflow-logo.svg
                   " alt="mlflow logo" width="80">
                 </a>
@@ -234,7 +289,8 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <a href="https://github.com/keras-team/keras" style="display: block; text-decoration: none; color: inherit;">
+                <a href="https://github.com/keras-team/keras"
+                  style="display: block; text-decoration: none; color: inherit;">
                   <img src="./assets/images/keras-logo.png" alt="keras logo" width="80">
                 </a>
               </div>
@@ -244,7 +300,8 @@
 
                 <p class="service-item-text">
                   Keras 3 is a multi-backend deep learning framework, with support for JAX, TensorFlow, and PyTorch.
-                  Effortlessly build and train models for computer vision, natural language processing, audio processing,
+                  Effortlessly build and train models for computer vision, natural language processing, audio
+                  processing,
                   timeseries forecasting, recommender systems, etc.
                 </p>
               </div>
@@ -252,23 +309,27 @@
 
             <li class="service-item">
 
-                <div class="service-icon-box">
-                  <a href="https://github.com/keras-team/keras-nlp" style="display: block; text-decoration: none; color: inherit;">
-                    <img src="./assets/images/keras-logo.png" alt="keras logo" width="80">
-                  </a>
-                </div>
+              <div class="service-icon-box">
+                <a href="https://github.com/keras-team/keras-nlp"
+                  style="display: block; text-decoration: none; color: inherit;">
+                  <img src="./assets/images/keras-logo.png" alt="keras logo" width="80">
+                </a>
+              </div>
 
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">KerasNLP</h4>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">KerasNLP</h4>
 
-                  <p class="service-item-text">
-                    KerasNLP is a natural language processing library that works natively with TensorFlow, JAX, or PyTorch.
-                    KerasNLP provides a repository of pre-trained models and a collection of lower-level building blocks for
-                    language modeling. Built on Keras 3, models can be trained and serialized in any framework and re-used in
-                    another without costly migrations.
-                  </p>
-                </div>
-              
+                <p class="service-item-text">
+                  KerasNLP is a natural language processing library that works natively with TensorFlow, JAX, or
+                  PyTorch.
+                  KerasNLP provides a repository of pre-trained models and a collection of lower-level building blocks
+                  for
+                  language modeling. Built on Keras 3, models can be trained and serialized in any framework and re-used
+                  in
+                  another without costly migrations.
+                </p>
+              </div>
+
             </li>
 
           </ul>
@@ -335,7 +396,7 @@
               <span>2018 — 2021</span>
 
               <p class="timeline-text">
-                Working in Google Local Services, building geo targeting system, and i18n expansion. 
+                Working in Google Local Services, building geo targeting system, and i18n expansion.
               </p>
 
             </li>
@@ -364,7 +425,7 @@
 
               <p class="timeline-text">
                 The funny part is 85% of the courses I took were from the computer science department, which
-                is totally allowed by EE department. 
+                is totally allowed by EE department.
               </p>
 
             </li>
@@ -467,7 +528,8 @@
           <h3 class="h3 form-title">Contact Form</h3>
 
           <p class=service-item-text>
-            If you are interested in collaboration or would like to have a chat, feel free to reach out to me by sending me an email.
+            If you are interested in collaboration or would like to have a chat, feel free to reach out to me by sending
+            me an email.
             <br>
             Please do not ask me if I can help you with your coursework or survey, thank you!
           </p>
