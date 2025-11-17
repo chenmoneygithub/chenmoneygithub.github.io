@@ -132,7 +132,9 @@ a {
 
 li { list-style: none; }
 
-img, ion-icon, a, button, time, span { display: block; }
+img, ion-icon, button, time, span { display: block; }
+
+a { display: inline; }
 
 button {
   font: inherit;

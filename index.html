@@ -5,559 +5,718 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chen Qian - Machine Learning Engineer</title>
+  <title>Chen Qian - AI Researcher and Engineer</title>
 
-  <!-- Add meta description -->
+  <!-- Meta tags -->
   <meta name="description"
-    content="Chen Qian - Machine Learning Engineer and Open Source Contributor. Co-founder of KerasNLP, core contributor to Keras 3, MLflow, and DSPy. Specialized in deep learning, LLMs, and MLOps.">
-
-  <!-- Add meta keywords -->
+    content="Chen Qian - AI Researcher and Engineer specializing in in-context learning, AI system evaluation, and efficient training. Primary maintainer of DSPy, founding engineer of Keras 3.">
   <meta name="keywords"
-    content="Chen Qian, Machine Learning Engineer, KerasNLP, Keras 3, MLflow, DSPy, Deep Learning, LLM, MLOps, Open Source">
+    content="Chen Qian, AI Research, AI Engineer, In-Context Learning, DSPy, Keras, MLflow, Prompt Optimization, Compound AI Systems">
 
-  <!-- Add social media meta tags -->
-  <meta property="og:title" content="Chen Qian - Machine Learning Engineer">
+  <!-- Social media meta tags -->
+  <meta property="og:title" content="Chen Qian - AI Researcher and Engineer">
   <meta property="og:description"
-    content="Machine Learning Engineer and Open Source Contributor. Co-founder of KerasNLP, core contributor to Keras 3, MLflow, and DSPy.">
+    content="AI Researcher and Engineer specializing in in-context learning, AI system evaluation, and efficient training. Primary maintainer of DSPy, founding engineer of Keras 3.">
   <meta property="og:image" content="./assets/images/avatar.jpeg">
   <meta property="og:url" content="https://chenmoney.com">
 
-  <!-- Add canonical URL -->
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://chenmoney.com">
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .avatar {
+      flex-shrink: 0;
+    }
+
+    .avatar img {
+      width: 220px;
+      height: 220px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .header-content {
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .tagline {
+      font-size: 1.1em;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .header-links a:hover {
+      text-decoration: underline;
+    }
+
+    .header-links svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Navigation Tabs */
+    nav {
+      margin-bottom: 30px;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-tabs button {
+      background: none;
+      border: none;
+      padding: 12px 0;
+      font-size: 1.05em;
+      color: #666;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .nav-tabs button:hover {
+      color: #333;
+    }
+
+    .nav-tabs button.active {
+      color: #0066cc;
+      border-bottom-color: #0066cc;
+      font-weight: 600;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #1a1a1a;
+    }
+
+    h3 {
+      font-size: 1.3em;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #2a2a2a;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    /* Research Interests */
+    .research-interests {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .research-interests li {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .research-interests li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+      font-weight: bold;
+    }
+
+    /* Education & Teaching - condensed on landing */
+    .info-section {
+      margin: 30px 0;
+    }
+
+    .info-section p {
+      line-height: 1.8;
+      color: #444;
+    }
+
+    /* Publications */
+    .publication-list {
+      list-style: none;
+    }
+
+    .publication-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+    }
+
+    .pub-title {
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .pub-title a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .pub-title a:hover {
+      text-decoration: underline;
+    }
+
+    .pub-venue {
+      color: #666;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .pub-year {
+      color: #888;
+      font-size: 0.9em;
+      margin-left: 8px;
+    }
+
+    /* Open Source Projects - Grid Layout */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      border: 1px solid #e0e0e0;
+      padding: 25px;
+      border-radius: 8px;
+      transition: box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .project-name-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .project-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .project-name {
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .project-name a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .project-name a:hover {
+      text-decoration: underline;
+    }
+
+    .project-stars {
+      color: #666;
+      font-size: 0.95em;
+      white-space: nowrap;
+    }
+
+    .project-description {
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.7;
+    }
+
+    .project-highlights {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-highlights li {
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 8px;
+      color: #444;
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+
+    .project-highlights li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+      font-weight: bold;
+    }
+
+    /* Work Experience */
+    .experience-item {
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .experience-item:last-child {
+      border-bottom: none;
+    }
+
+    .job-title {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+
+    .job-date {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 12px;
+    }
+
+    .job-description {
+      color: #444;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e9ecef;
+      text-align: center;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .avatar img {
+        width: 140px;
+        height: 140px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .header-links {
+        justify-content: center;
+      }
+
+      .nav-tabs {
+        gap: 15px;
+        overflow-x: auto;
+      }
+
+      .nav-tabs button {
+        font-size: 0.95em;
+        white-space: nowrap;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main role="main">
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/avatar.jpeg" alt="Chen Qian" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Chen Qian">Chen Qian</h1>
-
-          <p class="title">Machine Learning Engineer<br>Open Source Enthusiast</p>
+  <div class="container">
+    <header>
+      <div class="avatar">
+        <img src="./assets/images/avatar.jpeg" alt="Chen Qian">
+      </div>
+      <div class="header-content">
+        <h1>Chen Qian</h1>
+        <p class="tagline">
+          AI Researcher and Engineer. Primary maintainer of DSPy. Founding engineer of Keras 3 and KerasHub.
+        </p>
+        <div class="header-links">
+          <a href="mailto:qianchen94era@gmail.com">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            Email
+          </a>
+          <a href="https://github.com/chenmoneygithub" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub
+          </a>
+          <a href="https://scholar.google.com/citations?user=LV-5WmIAAAAJ" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+            </svg>
+            Google Scholar
+          </a>
+          <a href="https://x.com/ChenMoneyQ" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Twitter/X
+          </a>
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
       </div>
+    </header>
 
-      <div class="sidebar-info_more">
+    <nav>
+      <ul class="nav-tabs">
+        <li><button class="active" data-tab="about">About</button></li>
+        <li><button data-tab="publications">Publications</button></li>
+        <li><button data-tab="opensource">Open Source</button></li>
+        <li><button data-tab="experience">Work Experience</button></li>
+      </ul>
+    </nav>
 
-        <div class="separator"></div>
+    <!-- About Tab -->
+    <div class="tab-content active" id="about">
+      <section>
+        <p>
+          I am an AI researcher and engineer focused on making AI systems reliable, efficient, and accessible. My work spans
+          in-context learning, AI system evaluation, and language model authoring and training. My goal is to enable large-scale AI
+          deployment across all industries, not just tech. Most of my work is open source and available on my <a href="https://github.com/chenmoneygithub">GitHub</a>.
 
-        <ul class="contacts-list">
+          <br><br>
+          Over the past 7 years, I have worked at Google and Databricks. I am currently transitioning from engineering to research
+          to focus on open-ended questions in AI, such as automatic prompt optimization and AI evaluation with minimal human effort. <br>
+        </p>
+      </section>
 
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:qianchen94era@gmail.com" class="contact-link">qianchen94era@gmail.com</a>
-            </div>
-
-          </li>
-
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="logo-github"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Github</p>
-
-              <a href="https://github.com/chenmoneygithub" class="github-link">chenmoneygithub</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Bay Area, California, USA</address>
-            </div>
-
-          </li>
-
+      <section>
+        <h2>Research Interests</h2>
+        <ul class="research-interests">
+          <li><strong>In-context learning:</strong> Automatic prompt optimization, context management and compression,
+            and language model understanding through ICL</li>
+          <li><strong>AI system evaluation:</strong> Benchmarks and evaluation frameworks for domain-specific
+            applications (hardware design, scientific reasoning, finance), with a goal of minimize human effort during the evaluation process</li>
+          <li><strong>Compound AI systems:</strong> Architecture for AI agents and enhancing retrieval quality in AI
+            systems</li>
+          <li><strong>Efficient training and inference:</strong> Reducing communication overhead in distributed systems
+          and new model/layer architectures for computational efficiency</li>
         </ul>
+      </section>
 
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/thomas-chen-qian/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-
+      <section class="info-section">
+        <h2>Teaching & Talks</h2>
+        <ul class="research-interests">
+          <li><strong>Instructor:</strong> <a
+              href="https://www.deeplearning.ai/short-courses/dspy-build-optimize-agentic-apps/"
+              target="_blank">deeplearning.ai short course "DSPy: Build & Optimize Agentic Apps"</a></li>
+          <li><strong>Speaker:</strong> <a href="https://www.youtube.com/watch?v=LlGuO_MyTXU" target="_blank">Streamline
+              DSPy development with MLflow</a></li>
+          <li><strong>Speaker:</strong> <a href="https://www.youtube.com/watch?v=aRhMwo5na90&t=1933s"
+              target="_blank">Explore generative models in AI with Keras</a></li>
         </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I am a machine learning engineer with lots of interest in open source. I co-founded project
-            <a href="https://github.com/keras-team/keras-nlp" style="display: inline-block;">KerasNLP</a> with my
-            colleague at Google, and I am the second author (first author is <a href="https://twitter.com/fchollet"
-              style="display: inline-block;">Francois Chollet</a>)
-            of <a href="https://github.com/keras-team/keras" style="display: inline-block;">Keras 3</a>, also known as
-            multi-backend Keras.
-          </p>
-          <p>
-            Currently I am working for Databricks, and working on the development and maintainance of two open-source
-            projects:
-          </p>
-          <ul style="list-style-type: disc; padding-left: 20px;">
-            <li>
-              - <a href="https://github.com/stanfordnlp/dspy" style="display: inline-block;">DSPy</a>, a framework for
-              algorithmically optimizing LM prompts and weights. DSPy is still an experimental project, and we are
-              working
-              on lots of exciting new features, stay tuned!
-            </li>
-            <li>
-              - <a href="https://github.com/mlflow/mlflow" style="display: inline-block;">MLflow</a>, a popular
-              open-source machine learning platform. Specially in charge of the MLflow support for deep learning.
-            </li>
-          </ul>
-
-          <p>
-            I am specialized in deep learning, experienced in ML data processing, model authoring, training,
-            optimization and
-            deployment. I am also a just-fine backend & infrastructure engineer, and have experience in building
-            scalable and
-            reliable web services. Lastly, I am terrible at frontend, trust me bro, I have tried, but it's just not my
-            thing.
-          </p>
-
-          <p>
-            I am open to collaborations in the areas of LLM and GenAI. Feel free to reach out
-            to me
-            if you are interested in working together, or would like to have a chat. I also give tech talks and
-            workshops on
-            deep learning, with a focus on training/finetuning and MLops with MLflow, and open to invitations.
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What I'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <a href="https://github.com/stanfordnlp/dspy"
-                  style="display: block; text-decoration: none; color: inherit;">
-                  <img src="./assets/images/dspy_logo.png
-                  " alt="dspy logo" width="80">
-                </a>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">DSPy</h4>
-
-                <p class="service-item-text">
-                  DSPy is a framework for algorithmically building compound AI system, and automatically optimizing LM
-                  prompts
-                  and weights, especially when LMs are used one or more times within a pipeline.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <a href="https://github.com/mlflow/mlflow"
-                  style="display: block; text-decoration: none; color: inherit;">
-                  <img src="./assets/images/mlflow-logo.svg
-                  " alt="mlflow logo" width="80">
-                </a>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">MLflow</h4>
-
-                <p class="service-item-text">
-                  MLflow is a platform to streamline machine learning development, including tracking experiments,
-                  packaging code into reproducible runs, and sharing and deploying models.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <a href="https://github.com/keras-team/keras"
-                  style="display: block; text-decoration: none; color: inherit;">
-                  <img src="./assets/images/keras-logo.png" alt="keras logo" width="80">
-                </a>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Keras 3</h4>
-
-                <p class="service-item-text">
-                  Keras 3 is a multi-backend deep learning framework, with support for JAX, TensorFlow, and PyTorch.
-                  Effortlessly build and train models for computer vision, natural language processing, audio
-                  processing,
-                  timeseries forecasting, recommender systems, etc.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <a href="https://github.com/keras-team/keras-nlp"
-                  style="display: block; text-decoration: none; color: inherit;">
-                  <img src="./assets/images/keras-logo.png" alt="keras logo" width="80">
-                </a>
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">KerasNLP</h4>
-
-                <p class="service-item-text">
-                  KerasNLP is a natural language processing library that works natively with TensorFlow, JAX, or
-                  PyTorch.
-                  KerasNLP provides a repository of pre-trained models and a collection of lower-level building blocks
-                  for
-                  language modeling. Built on Keras 3, models can be trained and serialized in any framework and re-used
-                  in
-                  another without costly migrations.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Databricks (Senior Machine Learning Engineer)</h4>
-
-              <span>2023 — Present</span>
-
-              <p class="timeline-text">
-                Working in the MLflow team, leading the effort to improve MLflow experiment tracking to be more seamless
-                for deep learning workflows.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Google (Senior Machine Learning Engineer)</h4>
-
-              <span>2021 — 2023</span>
-
-              <p class="timeline-text">
-                Working in the Keras team, co-founded Keras 3 and KerasNLP.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Google (Software Engineer)</h4>
-
-              <span>2018 — 2021</span>
-
-              <p class="timeline-text">
-                Working in Google Local Services, building geo targeting system, and i18n expansion.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Stanford University (Master of Electrical Engineer)</h4>
-
-              <span>2016 — 2018</span>
-
-              <p class="timeline-text">
-                The funny part is 85% of the courses I took were from the computer science department, which
-                is totally allowed by EE department.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">NLP Model Training/Tuning</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">MLOps</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Open Source Community Building</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Backend</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Infrastructure</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <p class=service-item-text>
-            If you are interested in collaboration or would like to have a chat, feel free to reach out to me by sending
-            me an email.
-            <br>
-            Please do not ask me if I can help you with your coursework or survey, thank you!
-          </p>
-
-        </section>
-
-      </article>
-
+      </section>
     </div>
 
-  </main>
+    <!-- Publications Tab -->
+    <div class="tab-content" id="publications">
+      <h2>Publications</h2>
+      <ul class="publication-list">
+        <li class="publication-item">
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2508.04660" target="_blank">Multi-module GRPO: Composing policy gradients and prompt optimization for language model programs</a>
+          </div>
+          <div class="pub-venue">
+            Ziems, N., Soylu, D., Agrawal, L. A., Miller, I., Lai, L., <strong>Qian, C.</strong>, ... & Khattab, O.
+            <br>NeurIPS 2025 Workshop FoRM (accepted)
+          </div>
+        </li>
 
+        <li class="publication-item">
+          <div class="pub-title">
+            <a href="https://drive.google.com/file/d/1rCQvAuIz-wcw4GzozoK5uraoPqCKv0kc/view" target="_blank">In-Context Distillation: Prompt-Based Knowledge Transfer Between Language Models</a>
+          </div>
+          <div class="pub-venue">
+            <strong>Qian, C.</strong>, Tomu H., Koppol P.
+            <br>Manuscript under internal review at Databricks
+          </div>
+        </li>
 
+        <li class="publication-item">
+          <div class="pub-title">
+            <a href="https://www.jmlr.org/papers/v25/24-0543.html" target="_blank">KerasCV and KerasNLP: Multi-framework Models</a>
+          </div>
+          <div class="pub-venue">
+            Watson, M., Sreepathihalli, D. S., Chollet, F., Görner, M., Sodhia, K., Sampath, R., Patel, T., Jin, H.,
+            Kovelamudi, N., Rasskin, G., Saadat, S., Wood, L., <strong>Qian, C.</strong>, Bischof, J., Stenbit, I., Sharma, A., Mishra,
+            A.
+            <br>Journal of Machine Learning Research, 25(375):1–10, 2024
+          </div>
+        </li>
 
+        <li class="publication-item">
+          <div class="pub-title">
+            <a href="https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/reports/2760185.pdf" target="_blank">Deep learning based authorship identification</a>
+          </div>
+          <div class="pub-venue">
+            <strong>Qian, Chen</strong>, Tianchang He, and Rao Zhang
+            <br>Report, Stanford University (2017): 1-9
+          </div>
+        </li>
 
+        <li class="publication-item">
+          <div class="pub-title">
+            <a href="https://ieeexplore.ieee.org/document/7482689" target="_blank">Sensing and recognition for multiple-primary-power-level scenario with noise uncertainty</a>
+          </div>
+          <div class="pub-venue">
+            Gao, F., <strong>Qian, C.</strong>, Qian, H., & Zhang, T.
+            <br>IEEE Transactions on Vehicular Technology, 66(3), 2289-2300, 2016
+          </div>
+        </li>
 
+        <li class="publication-item">
+          <div class="pub-title">
+            <a href="https://ieeexplore.ieee.org/abstract/document/7448630" target="_blank">Spectrum sensing and SNR walls when primary user has multiple power levels</a>
+          </div>
+          <div class="pub-venue">
+            <strong>Qian, Chen</strong>, Han Qian, and Feifei Gao
+            <br>2015 IEEE/CIC International Conference on Communications in China (ICCC), 2015
+          </div>
+        </li>
+      </ul>
+    </div>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+    <!-- Open Source Tab -->
+    <div class="tab-content" id="opensource">
+      <h2>Open Source Contributions</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name-wrapper">
+              <img src="./assets/images/dspy_logo.png" alt="DSPy logo" class="project-logo">
+              <div class="project-name">
+                <a href="https://github.com/stanfordnlp/dspy" target="_blank">DSPy</a>
+              </div>
+            </div>
+            <div class="project-stars">⭐ 29.1K</div>
+          </div>
+          <div class="project-description">
+            Framework for algorithmically optimizing LM prompts and weights, especially when LMs are used one or more
+            times within a pipeline.
+          </div>
+          <ul class="project-highlights">
+            <li>Primary contributor and maintainer since mid 2024</li>
+            <li>Led the development of DSPy 3, including async DSPy, streaming, cache, and customizable adapter/LM</li>
+            <li>Collaborated with researchers to land SIMBA, GEPA, and GRPO optimizers</li>
+          </ul>
+        </div>
 
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name-wrapper">
+              <img src="./assets/images/keras-logo.png" alt="Keras logo" class="project-logo">
+              <div class="project-name">
+                <a href="https://github.com/keras-team/keras" target="_blank">Keras</a>
+              </div>
+            </div>
+            <div class="project-stars">⭐ 63.5K</div>
+          </div>
+          <div class="project-description">
+            Multi-backend deep learning framework, with support for JAX, TensorFlow, and PyTorch.
+          </div>
+          <ul class="project-highlights">
+            <li>Founding engineer of Keras 3</li>
+            <li>Unified multi-backend API across TensorFlow / PyTorch / JAX</li>
+            <li>Led implementation of multi-backend layers and performance benchmarking</li>
+            <li>Designed and implemented new Keras optimizers with clean user journey and robustness in distributed
+              training</li>
+          </ul>
+        </div>
 
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name-wrapper">
+              <img src="./assets/images/keras-logo.png" alt="KerasNLP logo" class="project-logo">
+              <div class="project-name">
+                <a href="https://github.com/keras-team/keras-nlp" target="_blank">KerasNLP</a>
+              </div>
+            </div>
+            <div class="project-stars">(rebranded as KerasHub)</div>
+          </div>
+          <div class="project-description">
+            Natural language processing library that works natively with TensorFlow, JAX, or PyTorch.
+          </div>
+          <ul class="project-highlights">
+            <li>Founding engineer</li>
+            <li>Led design and implementation of tokenizers, transformer blocks, and trainer classes</li>
+            <li>Architected generative models and sampling APIs, including KV cache support</li>
+          </ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-name-wrapper">
+              <img src="./assets/images/mlflow-logo.svg" alt="MLflow logo" class="project-logo">
+              <div class="project-name">
+                <a href="https://github.com/mlflow/mlflow" target="_blank">MLflow</a>
+              </div>
+            </div>
+            <div class="project-stars">⭐ 22.5K</div>
+          </div>
+          <div class="project-description">
+            Open-source platform to streamline machine learning development, including tracking experiments, packaging
+            code, and sharing models.
+          </div>
+          <ul class="project-highlights">
+            <li>Core architect of deep learning support</li>
+            <li>Developed metrics/run grouping, system metrics, and experiment resuming features</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Work Experience Tab -->
+    <div class="tab-content" id="experience">
+      <h2>Work Experience</h2>
+
+      <div class="experience-item">
+        <div class="job-title">Databricks - AI Engineer</div>
+        <div class="job-date">July 2023 - Present</div>
+        <div class="job-description">
+          Working on DSPy and MLflow in the AI Open Source team. Co-led the development of DSPy 3 as primary
+          maintainer. Integrated DSPy into Databricks AI products like agent bricks. Led MLflow improvements for deep
+          learning workflows, including large-experiments compatibility and system metrics. Migrated all Databricks
+          training workloads from Weights & Biases to MLflow.
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Google - Machine Learning Engineer</div>
+        <div class="job-date">January 2021 - July 2023</div>
+        <div class="job-description">
+          Worked on the Keras team. Founding engineer of Keras 3, unifying multi-backend API across TensorFlow, PyTorch,
+          and JAX. Founding engineer of KerasNLP (rebranded to KerasHub in 2024). Led Keras optimizer rewriting and
+          migrated Google's entire Keras optimizer codebase to the new optimizer.
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Google - Backend Engineer</div>
+        <div class="job-date">August 2018 - January 2021</div>
+        <div class="job-description">
+          Worked on Google Local Services Ads team. Led the effort of phone/message support for i18n. Led the effort of smart geo targeting.
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Last updated: November 2025</p>
+    </footer>
+  </div>
+
+  <script>
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('[data-tab]');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(targetTab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 
 </html>
