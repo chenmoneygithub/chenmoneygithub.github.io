@@ -635,7 +635,7 @@
                 <a href="https://github.com/stanfordnlp/dspy" target="_blank">DSPy</a>
               </div>
             </div>
-            <div class="project-stars">⭐ 29.1K</div>
+            <div class="project-stars" data-repo="stanfordnlp/dspy">⭐ 29.1K</div>
           </div>
           <div class="project-description">
             Framework for algorithmically optimizing LM prompts and weights, especially when LMs are used one or more
@@ -656,7 +656,7 @@
                 <a href="https://github.com/keras-team/keras" target="_blank">Keras</a>
               </div>
             </div>
-            <div class="project-stars">⭐ 63.5K</div>
+            <div class="project-stars" data-repo="keras-team/keras">⭐ 63.5K</div>
           </div>
           <div class="project-description">
             Multi-backend deep learning framework, with support for JAX, TensorFlow, and PyTorch.
@@ -698,7 +698,7 @@
                 <a href="https://github.com/mlflow/mlflow" target="_blank">MLflow</a>
               </div>
             </div>
-            <div class="project-stars">⭐ 22.5K</div>
+            <div class="project-stars" data-repo="mlflow/mlflow">⭐ 22.5K</div>
           </div>
           <div class="project-description">
             Open-source platform to streamline machine learning development, including tracking experiments, packaging
@@ -786,6 +786,21 @@
         button.classList.add('active');
         document.getElementById(targetTab).classList.add('active');
       });
+    });
+
+    // Live GitHub star counts. Falls back to the hardcoded number on any error
+    // (e.g. GitHub's unauthenticated rate limit), so the page is never worse off.
+    const formatStars = (n) => n >= 1000 ? (n / 1000).toFixed(1) + 'K' : String(n);
+
+    document.querySelectorAll('.project-stars[data-repo]').forEach(el => {
+      fetch(`https://api.github.com/repos/${el.dataset.repo}`)
+        .then(res => res.ok ? res.json() : Promise.reject(res.status))
+        .then(data => {
+          if (typeof data.stargazers_count === 'number') {
+            el.textContent = `⭐ ${formatStars(data.stargazers_count)}`;
+          }
+        })
+        .catch(() => { /* keep the fallback number already in the HTML */ });
     });
   </script>
 </body>
